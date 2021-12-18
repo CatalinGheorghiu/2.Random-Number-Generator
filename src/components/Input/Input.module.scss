@@ -1,0 +1,32 @@
+@import 'src/styles/abstract/colors';
+
+input {
+  padding: 1.5rem 2rem;
+  font-style: initial;
+  border: none;
+  border-radius: 0.8rem;
+
+  &::-webkit-outer-spin-button,
+  &::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+
+  /* Firefox */
+  &[type='number'] {
+    -moz-appearance: textfield;
+  }
+}
+
+label {
+  padding-bottom: 0.5rem;
+  font-size: 1.4rem;
+  font-weight: bolder;
+  color: $slate-900;
+}
+
+.input-container {
+  display: flex;
+  flex-direction: column;
+  padding: 1rem 0;
+}
