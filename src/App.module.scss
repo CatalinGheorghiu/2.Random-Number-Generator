@@ -1,0 +1,31 @@
+@import 'src/styles/abstract/colors';
+
+.generator {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+
+  &__container {
+    display: flex;
+    flex-direction: column;
+    background-color: $emerald-600;
+    border-radius: 0.7rem;
+    padding: 4rem;
+  }
+
+  &__inputs-container {
+    display: flex;
+    flex-direction: column;
+    padding: 2rem 0;
+  }
+
+  &__random-number {
+    padding: 2rem;
+    text-align: center;
+
+    color: $slate-900;
+    font-weight: bolder;
+    font-size: 1.6rem;
+  }
+}
