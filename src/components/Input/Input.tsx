@@ -8,8 +8,10 @@ const Input = ({
   inputClass,
   inputText,
   inputType,
+  inputValue,
   minValue,
   maxValue,
+  inputOnChange,
 }: InputInterface) => {
   return (
     <div className={styles['input-container']}>
@@ -22,6 +24,8 @@ const Input = ({
         min={minValue}
         max={maxValue}
         pattern="[0-9]+"
+        value={inputValue}
+        onChange={inputOnChange}
       />
     </div>
   );
