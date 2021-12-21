@@ -5,17 +5,6 @@ input {
   font-style: initial;
   border: none;
   border-radius: 0.8rem;
-
-  &::-webkit-outer-spin-button,
-  &::-webkit-inner-spin-button {
-    -webkit-appearance: none;
-    margin: 0;
-  }
-
-  /* Firefox */
-  &[type='number'] {
-    -moz-appearance: textfield;
-  }
 }
 
 label {
