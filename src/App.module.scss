@@ -9,9 +9,10 @@
   &__container {
     display: flex;
     flex-direction: column;
+    max-width: 300px;
+    padding: 4rem;
     background-color: $emerald-600;
     border-radius: 0.7rem;
-    padding: 4rem;
   }
 
   &__inputs-container {
@@ -28,4 +29,10 @@
     font-weight: bolder;
     font-size: 1.6rem;
   }
+}
+
+.error {
+  color: $rose-600;
+  font-size: 1.2rem;
+  font-weight: 500;
 }

@@ -10,12 +10,28 @@ const App = () => {
     inputValue2: 1,
   });
   const [randomNumber, setRandomNumber] = useState(0);
+  const [error, setError] = useState('');
 
   function generateRandomNumber() {
-    const min = Math.ceil(+values.inputValue1);
-    const max = Math.floor(+values.inputValue2);
-    const randomNumber = Math.floor(Math.random() * (max - min + 1)) + min;
-    setRandomNumber(randomNumber);
+    try {
+      const min = Math.ceil(+values.inputValue1);
+      const max = Math.floor(+values.inputValue2);
+      const randomNumber = Math.floor(Math.random() * (max - min + 1)) + min;
+
+      if (min >= max)
+        throw new Error(
+          "The min value can't be greater or equal to the max" + ' value!',
+        );
+
+      setError('');
+      setRandomNumber(randomNumber);
+    } catch (e) {
+      if (typeof e === 'string') {
+        setError(e);
+      } else if (e instanceof Error) {
+        setError(e.message);
+      }
+    }
   }
 
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -43,6 +59,7 @@ const App = () => {
             inputValue={+values.inputValue1}
             inputOnChange={handleChange}
           />
+          {error && <span className={styles.error}>{error}</span>}
           <Input
             id="inputValue2"
             inputClass="inputValue2"
